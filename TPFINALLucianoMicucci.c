@@ -8,336 +8,336 @@
 #define PI 3.141592
 
 
-char figuras2d();
-char figuras3d();
-char figurashd();
-void area_tri();
-void area_cua();
-void area_rec();
-void area_pen();
-void area_cir();
-void perimetro_tri();
-void perimetro_rec();
-void perimetro_cua();
-void perimetro_pen();
-void perimetro_cir();
+void figuras2d(void);
+void figuras3d(void);
+void figurashd(void);
+void area_tri(void);
+void area_cua(void);
+void area_rec(void);
+void area_pen(void);
+void area_cir(void);
+void perimetro_tri(void);
+void perimetro_rec(void);
+void perimetro_cua(void);
+void perimetro_pen(void);
+void perimetro_cir(void);
 
-void area_pira();
-void area_cono();
-void area_pri_rec();
-void area_pri_hex();
-void area_esfera();
-void vol_pira();
-void vol_cono();
-void vol_pri_rec();
-void vol_pri_hex();
-void vol_esfera();
+void area_pira(void);
+void area_cono(void);
+void area_pri_rec(void);
+void area_pri_hex(void);
+void area_esfera(void);
+void vol_pira(void);
+void vol_cono(void);
+void vol_pri_rec(void);
+void vol_pri_hex(void);
+void vol_esfera(void);
 
-void area_cubo();
-void area_tetraedro();
-void area_octaedro();
-void area_dodecaedro();
-void area_icoseaedro();
-void vol_cubo();
-void vol_tetraedro();
-void vol_octaedro();
-void vol_dodecaedro();
-void vol_icoseaedro();
+void area_cubo(void);
+void area_tetraedro(void);
+void area_octaedro(void);
+void area_dodecaedro(void);
+void area_icoseaedro(void);
+void vol_cubo(void);
+void vol_tetraedro(void);
+void vol_octaedro(void);
+void vol_dodecaedro(void);
+void vol_icoseaedro(void);
 
 char opciones_figuras,opciones_2d,opciones_3d,opciones_hd,opciones_calculo;
 
-
-int main()
+int main(void)
 {
-	printf ("\n ________________________________________________________");
-	printf ("\n|  A- Figuras 2d  |   B- Figuras 3d   |   C- Figuras hd  |");
-	printf ("\n|_________________|___________________|__________________|");
+	do{
+		printf ("\n ________________________________________________________________________");
+		printf ("\n|  A- Figuras 2d  |   B- Figuras 3d   |   C- Figuras hd  | S- Para salir |");
+		printf ("\n|_________________|___________________|__________________|_______________|");
 
-	opciones_figuras = getchar();
+		opciones_figuras = getchar();
 
-	switch( opciones_figuras )
-	{
-		case 'A':case 'a':
-			{
-				figuras2d();break;
-			}
-		case 'B':case 'b':
-			{
-				figuras3d();break;	
-			}
-		case 'C':case 'c':
-			{
-		   		figurashd();break;	
-			}
-		default:{printf ("\n\t +-----------------------------------------+");
-	         	 printf ("\n\t | Ingresa las opciones A, B o C. Por favor|");
-			 	 printf ("\n\t +-----------------------------------------+");break;}
-	}
-}
-
-char figuras2d()
-{
-	printf("\n\t\t## Selecciona la figura ##\n");
-    printf ("\n| T) Triangulo  | \n| C) Cuadrado   |\n| R) Rectangulo | \n| H) Pentagono  |\n| I) Circulo    | ");
-			fflush (stdin);
-			opciones_2d = getchar();                             
-
-			switch( opciones_2d )
-			{
-				case 'T':case 't':
-				{	
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':{area_tri();break;}
-										 case 'P':case 'p':{perimetro_tri();break;}
-										 default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
-										}break;	
-				}
-				case 'R':case 'r':
+		switch( opciones_figuras )
+		{
+			case 'A':case 'a':
 				{
-					printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-					printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
-					fflush (stdin);
-					opciones_calculo = getchar();
-
-					switch (opciones_calculo)
-					{
-					case 'A':case 'a':{area_rec();break;}
-					case 'P':case 'p':{perimetro_rec();break;}
-					default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
-					}
-					break;
+					figuras2d();break;
 				}
-		    	case 'C':case 'c':
+			case 'B':case 'b':
 				{
-				
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':{area_cua();break;}
-										 case 'P':case 'p':{perimetro_cua();break;}
-										 default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
-										}break;
+					figuras3d();break;	
 				}
-				case 'H':case 'h':
+			case 'C':case 'c':
 				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':{area_pen();break;}
-										 case 'P':case 'p':{perimetro_pen();break;}
-										 default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
-										}break;
+					figurashd();break;	
 				}	
-				case 'I':case 'i':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
-									fflush (stdin);
-									opciones_calculo = getchar();
+			default:{printf ("\n\t +-----------------------------------------+");
+					printf ("\n\t | Ingresa las opciones A, B o C. Por favor|");
+					printf ("\n\t +-----------------------------------------+");break;}
+		}
+	}while( opciones_figuras != 's' && 'S');
+	return 0;
+}
 
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':{area_cir();break;}
-										 case 'P':case 'p':{perimetro_cir();break;}
-										 default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
-										}break;
+	void figuras2d(void)
+	{
+		printf("\n\t\t## Selecciona la figura ##\n");
+		printf ("\n| T) Triangulo  | \n| C) Cuadrado   |\n| R) Rectangulo | \n| H) Pentagono  |\n| I) Circulo    | ");
+				fflush (stdin);
+				opciones_2d = getchar();                             
+
+				switch( opciones_2d )
+				{
+					case 'T':case 't':
+					{	
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':{area_tri();break;}
+											case 'P':case 'p':{perimetro_tri();break;}
+											default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
+											}break;	
+					}
+					case 'R':case 'r':
+					{
+						printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+						printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
+						fflush (stdin);
+						opciones_calculo = getchar();
+
+						switch (opciones_calculo)
+						{
+						case 'A':case 'a':{area_rec();break;}
+						case 'P':case 'p':{perimetro_rec();break;}
+						default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
+						}
+						break;
+					}
+					case 'C':case 'c':
+					{
 					
-				} 
-			    
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
+										fflush (stdin);
+										opciones_calculo = getchar();
 
-				default:{
-				printf ("\n\t +----------------------------------------------+");
-	         	printf ("\n\t | Ingresa las opciones 'T,C,R,H o I',por favor |");
-			 	printf ("\n\t +----------------------------------------------+");break;}
-			}
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':{area_cua();break;}
+											case 'P':case 'p':{perimetro_cua();break;}
+											default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
+											}break;
+					}
+					case 'H':case 'h':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':{area_pen();break;}
+											case 'P':case 'p':{perimetro_pen();break;}
+											default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
+											}break;
+					}	
+					case 'I':case 'i':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area     |\n\t\t| P-Perimetro|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':{area_cir();break;}
+											case 'P':case 'p':{perimetro_cir();break;}
+											default:{printf("\n\t ## La opcion ingresada NO es correcta ##");break;}
+											}break;
+						
+					} 
+					
+
+					default:{
+					printf ("\n\t +----------------------------------------------+");
+					printf ("\n\t | Ingresa las opciones 'T,C,R,H o I',por favor |");
+					printf ("\n\t +----------------------------------------------+");break;}
+				}
+	}			
+	void figuras3d(void)
+	{      	
+			printf("\n\t\t## Selecciona la figura ##\n");
+			printf ("\n\t\t| P-Piramide          | \n\t\t| C-Cono              |\n\t\t| A-Prisma Rectangular|\n\t\t| D-Prisma Hexagonal  |\n\t\t| E-Esfera            |");
+				fflush (stdin);
+				opciones_3d = getchar();
+
+				switch( opciones_3d )
+				{
+					case 'P':case 'p':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_pira();break;
+											case 'V':case 'v':vol_pira();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					case 'C':case 'c':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_cono();break;
+											case 'V':case 'v':vol_cono();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					case 'A':case 'a':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_pri_rec();break;
+											case 'V':case 'v':vol_pri_rec();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					case 'D':case 'd':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_pri_hex();break;
+											case 'V':case 'v':vol_pri_hex();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					case 'E':case 'e':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_esfera();break;
+											case 'V':case 'v':vol_esfera();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					default:{printf ("\n\t +----------------------------------------------+");
+							printf ("\n\t | Ingresa las opciones 'P,C,A,D o E',Por favor |");
+							printf ("\n\t +----------------------------------------------+");break;}
+				}
+
+	}
+	void figurashd(void)
+	{       	
+			printf("\n\t\t## Selecciona la figura ##\n");
+			printf ("\n\t\t\t\t\t| C) Cubo      |\n\t\t\t\t\t| T) Tetraedro |\n\t\t\t\t\t| O) Octaedro  |\n\t\t\t\t\t| D) Dodecaedro|\n\t\t\t\t\t| P) Icosaedro |");
+				fflush (stdin);
+				opciones_hd = getchar();
+				
+				switch( opciones_hd )
+				{
+					case 'C':case 'c':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_cubo();break;
+											case 'V':case 'v':vol_cubo();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					case 'T':case 't':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_tetraedro();break;
+											case 'V':case 'v':vol_tetraedro();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					case 'O':case 'o':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_octaedro();break;
+											case 'V':case 'v':vol_octaedro();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					case 'D':case 'd':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_dodecaedro();break;
+											case 'V':case 'v':vol_dodecaedro();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					case 'P':case 'p':
+					{
+										printf("\n\t## Selecciona el calculo que queres realizar ##\n");
+										printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
+										fflush (stdin);
+										opciones_calculo = getchar();
+
+										switch (opciones_calculo)
+											{
+											case 'A':case 'a':area_icoseaedro();break;
+											case 'V':case 'v':vol_icoseaedro();break;
+											default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
+											}break;
+					}
+					default:{printf ("\n\t +----------------------------------------------+");
+							printf ("\n\t | Ingresa las opciones 'C,T,O,D o P',Por favor |");
+							printf ("\n\t +----------------------------------------------+");break;}
+				}	
 			
-}
-char figuras3d()
-{      	
-	    printf("\n\t\t## Selecciona la figura ##\n");
-		printf ("\n\t\t| P-Piramide          | \n\t\t| C-Cono              |\n\t\t| A-Prisma Rectangular|\n\t\t| D-Prisma Hexagonal  |\n\t\t| E-Esfera            |");
-			fflush (stdin);
-			opciones_3d = getchar();
-
-			switch( opciones_3d )
-			{
-				case 'P':case 'p':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_pira();break;
-										 case 'V':case 'v':vol_pira();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				case 'C':case 'c':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_cono();break;
-										 case 'V':case 'v':vol_cono();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				case 'A':case 'a':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_pri_rec();break;
-										 case 'V':case 'v':vol_pri_rec();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				case 'D':case 'd':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_pri_hex();break;
-										 case 'V':case 'v':vol_pri_hex();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				case 'E':case 'e':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_esfera();break;
-										 case 'V':case 'v':vol_esfera();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				default:{printf ("\n\t +----------------------------------------------+");
-	         			 printf ("\n\t | Ingresa las opciones 'P,C,A,D o E',Por favor |");
-			 			 printf ("\n\t +----------------------------------------------+");break;}
-			}
-
-}
-char figurashd()
-{       	
-	    printf("\n\t\t## Selecciona la figura ##\n");
- 		printf ("\n\t\t\t\t\t| C) Cubo      |\n\t\t\t\t\t| T) Tetraedro |\n\t\t\t\t\t| O) Octaedro  |\n\t\t\t\t\t| D) Dodecaedro|\n\t\t\t\t\t| P) Icosaedro |");
-			fflush (stdin);
-			opciones_hd = getchar();
-			
-			switch( opciones_hd )
-			{
-				case 'C':case 'c':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_cubo();break;
-										 case 'V':case 'v':vol_cubo();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				case 'T':case 't':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_tetraedro();break;
-										 case 'V':case 'v':vol_tetraedro();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				case 'O':case 'o':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_octaedro();break;
-										 case 'V':case 'v':vol_octaedro();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				case 'D':case 'd':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_dodecaedro();break;
-										 case 'V':case 'v':vol_dodecaedro();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				case 'P':case 'p':
-				{
-									printf("\n\t## Selecciona el calculo que queres realizar ##\n");
-									printf ("\n\t\t| A-Area   |\n\t\t| V-Volumen|");
-									fflush (stdin);
-									opciones_calculo = getchar();
-
-									switch (opciones_calculo)
-										{
-										 case 'A':case 'a':area_icoseaedro();break;
-										 case 'V':case 'v':vol_icoseaedro();break;
-										 default:printf("\n\t ## La opcion ingresada NO es correcta ##");break;
-										}break;
-				}
-				default:{printf ("\n\t +----------------------------------------------+");
-	         			 printf ("\n\t | Ingresa las opciones 'C,T,O,D o P',Por favor |");
-			 			 printf ("\n\t +----------------------------------------------+");break;}
-			}	
-}
-
-
-
+	}
+	
 
 // Funciones de figuras 2D
 
@@ -379,7 +379,7 @@ scanf("%i",&valor_2);
 resultado=5*valor_1*valor_2/2;
 printf("\nEl area del pentagono es : %i m2",resultado);
 }
-void area_cir(void) // no calcula 
+void area_cir(void)
 {	
 float  valor_1, resultado;
 printf("\nIngresa el radio: ");
